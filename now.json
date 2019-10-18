@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "shihen",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ],
+  "build": {
+    "env": {}
+  },
+  "alias": [
+    "shihen.now.sh"
+  ]
+}
