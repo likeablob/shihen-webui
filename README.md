@@ -1,5 +1,10 @@
-# Shihen Web UI
+<p align="center">
+  <img align="center" width="60%" height="auto" src="https://github.com/likeablob/shihen/raw/master/images/shihen_s_12.jpg">
+</p>
 
+# SHIHEN Web UI
+
+## **[The main repository is here.](https://github.com/likeablob/shihen)**
 
 ## Build Setup
 

@@ -5,7 +5,7 @@
         v-icon mdi-information-outline
       v-list-item-content
         v-list-item-title.title
-          | Shihen
+          | SHIHEN
     v-divider
     v-list(dense nav)
       v-list-item(v-for="item in items" :key="item.title" nuxt :to="item.to")

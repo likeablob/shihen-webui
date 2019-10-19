@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app-bar.appbar(app flat color="secondary" fixed :height="56")
-    v-toolbar-title.title.blue-grey--text.text--darken-4 Shihen
+    v-toolbar-title.title.blue-grey--text.text--darken-4 SHIHEN
     v-spacer
     slot(name="center")
     v-spacer
