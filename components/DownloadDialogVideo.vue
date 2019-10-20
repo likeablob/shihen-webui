@@ -139,7 +139,6 @@ export default {
         )
       )
         .drop()
-        .dropRight()
         .value()
 
       console.log(
