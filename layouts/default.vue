@@ -7,9 +7,11 @@ v-app()
         prepend-icon="mdi-magnify"
         placeholder="Add from presets"
         :items="presets"
-        v-model="presetText"
+        item-value="value"
+        item-text="title"
+        return-object
+        v-model="preset"
         :loading="presetLoading"
-        :value="presetText"
         :disabled="presetLoading"
       )
       v-tooltip(bottom v-if="false")
@@ -24,7 +26,6 @@ v-app()
 <script>
 import AppBar from '@/components/AppBar'
 import AppDrawer from '@/components/AppDrawer'
-import presets from '@/assets/presets'
 
 export default {
   components: {
@@ -33,22 +34,34 @@ export default {
   },
   data() {
     return {
-      presetText: '',
+      preset: undefined,
       presetLoading: false,
-      presets,
+      presets: [],
     }
   },
   computed: {},
   watch: {
-    presetText(v) {
+    preset(v) {
       if (v) {
         this.presetLoading = true
-        this.$axios.get(v).then(res => {
-          this.$store.commit('setPages', res.data)
+        this.$axios.get(v.path).then(res => {
+          this.$store.commit('setPages', res.data.data)
           this.presetLoading = false
-          this.presetText = ''
+          this.preset = undefined
         })
       }
+    },
+  },
+  mounted() {
+    this.fetchPresets()
+  },
+  methods: {
+    fetchPresets() {
+      this.presetLoading = true
+      this.$axios.get('/_nuxt/presets.json').then(({ data }) => {
+        this.presets = data
+        this.presetLoading = false
+      })
     },
   },
 }

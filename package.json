@@ -19,6 +19,7 @@
     "canvas-dither": "^1.0.0",
     "cross-env": "^5.2.0",
     "fontfaceobserver": "^2.1.0",
+    "generate-json-webpack-plugin": "^0.3.1",
     "konva": "^3.2.3",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",

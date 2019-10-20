@@ -1,4 +1,19 @@
+import fs from 'fs'
+import path from 'path'
 import colors from 'vuetify/es5/util/colors'
+import GenerateJsonPlugin from 'generate-json-webpack-plugin'
+
+const presetsDir = path.resolve('./static/presets/')
+const presets = fs
+  .readdirSync(presetsDir)
+  .filter(v => v.endsWith('.json'))
+  .map(file => {
+    const p = path.join(presetsDir, file)
+    const json = require(p)
+    console.log(p)
+    const { title, author, source } = json
+    return { title, author, source, path: `/presets/${file}` }
+  })
 
 export default {
   mode: 'spa',
@@ -97,5 +112,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
+    plugins: [new GenerateJsonPlugin('presets.json', presets)],
   },
 }
