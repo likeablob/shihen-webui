@@ -24,7 +24,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.10.1",
     "pako": "^1.0.10",
     "pug": "^2.0.4",
